@@ -35,6 +35,7 @@ The notebook covers:
 - Exploratory data analysis using histograms, box plots, and correlation analysis.
 - Mutual information analysis to identify features associated with student outcomes.
 - Comparisons of academic, financial, demographic, and course-related attributes across target classes.
+- Preprocessing pipeline and the preprocessed dataset.
 - Key insights and challenges identified during exploration.
 - Consideration of prediction timing to support early identification of at-risk students.
 
@@ -70,16 +71,17 @@ The team selected **prediction after the first semester** as the intended early-
 
 This approach allows the model to use enrollment-time information and first-semester academic performance while excluding all six second-semester features to avoid using information from the future.
 
-The final feature selection and preprocessing procedures will be documented during the supervised-learning phase.
+The 6 second-semester features were removed, the data was split 80/20 (stratified), and categories were encoded and numeric features scaled using the training data only. The result is saved as Dataset/preprocessed_data.csv (102 features, Target, and a split column).
 
 ## Repository Structure
 
 ```text
 SW485-Project-Group4/
 ├── Dataset/
-│   └── data.csv
+│   ├── data.csv
+│   ├── preprocessed_data.csv
+│   └── dataset_info.txt
 ├── Phase1_Data_Exploration.ipynb
-├── dataset_info.txt
 ├── .gitignore
 └── README.md
 ```
