@@ -9,6 +9,12 @@ This project focuses on analyzing university student data to identify factors as
 
 The project aims to explore patterns in student characteristics and academic outcomes and establish a foundation for developing a student retention and advisory dashboard that can support early identification of students at risk of dropping out.
 
+## Motivation
+
+Student dropout is an important challenge for universities because it affects students' academic progress and institutional retention rates. We chose this problem to explore how student characteristics and academic performance can help identify students who may need additional support.
+
+The selected UCI dataset provides relevant demographic, financial, and academic information for investigating these patterns and supporting the development of an early-warning advisory dashboard.
+
 ## Dataset Description
 
 The dataset contains **4,424 student records and 37 columns**, consisting of **36 input features** and one target variable.
@@ -19,11 +25,11 @@ The dataset was obtained from the UCI Machine Learning Repository:
 
 [Predict Students' Dropout and Academic Success](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success)
 
-The dataset is available in `Dataset/data.csv`, and its source and licensing information are documented in `dataset_info.txt`.
+The original dataset is available in `Dataset/data.csv`, and its source and licensing information are documented in `Dataset/dataset_info.txt`.
 
 ## Phase 1: Data Exploration
 
-The initial data exploration is documented in `Phase1_Data_Exploration.ipynb`.
+The Phase 1 analysis and preprocessing steps are documented in `Phase1_Data_Exploration.ipynb`.
 
 The notebook covers:
 
@@ -41,7 +47,7 @@ The notebook covers:
 
 ### Initial Data Inspection
 
-The dataset contains 4,424 records with no missing values identified during the initial inspection.
+The dataset contains 4,424 records, with no missing values identified during the initial inspection.
 
 The target classes are unevenly distributed:
 
@@ -65,13 +71,20 @@ Exploratory analysis identified several important patterns:
 
 These findings describe associations observed during exploration and do not establish cause-and-effect relationships.
 
-### Prediction Timing
+### Prediction Timing and Preprocessing
 
 The team selected **prediction after the first semester** as the intended early-warning point.
 
 This approach allows the model to use enrollment-time information and first-semester academic performance while excluding all six second-semester features to avoid using information from the future.
 
-The 6 second-semester features were removed, the data was split 80/20 (stratified), and categories were encoded and numeric features scaled using the training data only. The result is saved as Dataset/preprocessed_data.csv (102 features, Target, and a split column).
+The preprocessing pipeline includes:
+
+- Removing the six second-semester features.
+- Splitting the dataset into training and testing sets using an **80/20 stratified split**.
+- Encoding categorical features.
+- Scaling numerical features using parameters fitted on the training data only to prevent data leakage.
+
+The resulting preprocessed dataset is saved in `Dataset/preprocessed_data.csv`. It contains **102 processed features**, the `Target` column, and a column identifying the train/test split.
 
 ## Repository Structure
 
@@ -99,3 +112,8 @@ SW485-Project-Group4/
 
 ## AI Tools Disclosure
 
+ChatGPT was used to assist with documentation drafting, language refinement, and reviewing exploratory data analysis findings.
+
+The team reviewed the AI-assisted content and is responsible for verifying the accuracy of the analysis and final project deliverables.
+
+Any additional AI-assisted work, including code generation or debugging, will be disclosed as appropriate.
