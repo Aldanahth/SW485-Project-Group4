@@ -29,13 +29,13 @@ The original dataset is available in `Dataset/data.csv`, and its source and lice
 
 ## Phase 1: Data Exploration
 
-The Phase 1 analysis and preprocessing steps are documented in `Phase1_Data_Exploration.ipynb`.
+The data exploration and preprocessing steps are documented in `Phase1_Data_Exploration.ipynb`.
 
 The notebook covers:
 
 - Dataset selection and justification.
 - Initial inspection of dataset dimensions, structure, and data types.
-- Assessment of missing values.
+- Assessment and visualization of missing values.
 - Descriptive statistical analysis.
 - Analysis and visualization of the target class distribution.
 - Exploratory data analysis using histograms, box plots, and correlation analysis.
@@ -86,6 +86,20 @@ The preprocessing pipeline includes:
 
 The resulting preprocessed dataset is saved in `Dataset/preprocessed_data.csv`. It contains **102 processed features**, the `Target` column, and a column identifying the train/test split.
 
+## Phase 1: Supervised Learning
+
+The supervised learning work is assigned to `Phase1_Supervised_Learning.ipynb`.
+
+This notebook is intended to cover:
+
+- Random Forest model training and hyperparameter tuning.
+- Training and tuning a second classification model using SVM or Logistic Regression.
+- Feature importance analysis where applicable.
+- Model evaluation using accuracy, precision, recall, and F1-score.
+- Confusion matrices and 5-fold cross-validation.
+- Comparison of model performance and analysis of misclassifications.
+- Selection of a recommended model for Phase 2.
+
 ## Repository Structure
 
 ```text
@@ -95,6 +109,7 @@ SW485-Project-Group4/
 │   ├── preprocessed_data.csv
 │   └── dataset_info.txt
 ├── Phase1_Data_Exploration.ipynb
+├── Phase1_Supervised_Learning.ipynb
 ├── .gitignore
 └── README.md
 ```
@@ -110,10 +125,45 @@ SW485-Project-Group4/
 | جمانة العنزي | 445200400 |
 | اريام الركيان | 445200057 |
 
+## Team Contributions
+
+The responsibilities for Phase 1 were distributed among the six team members. Each member is responsible for implementing her assigned tasks, documenting the results, and contributing her work to the GitHub repository.
+
+| Student Name | Role | Phase 1 Responsibilities | Deadline |
+|---|---|---|---|
+| الدانة ال ثنيان | Data Inspection & Repository Management | Load and inspect the dataset; examine dimensions, data types, missing values, descriptive statistics, and target class distribution; set up and maintain the GitHub repository and README; collaborate on Key Insights & Challenges. | October 20, 2026 |
+| يسرى ال هلال | Exploratory Data Analysis | Create histograms, box plots, correlation heatmaps, and feature-versus-target visualizations; document the dataset source and justification; collaborate on Key Insights & Challenges. | October 20, 2026 |
+| نجد الغانم | Data Preprocessing | Encode categorical features, scale numerical features, prepare a stratified train/test split, address class imbalance as appropriate, export `preprocessed_data.csv`, and document preprocessing decisions. | October 15, 2026 |
+| اريام الركيان | Random Forest Model | Explain the model selection, train a Random Forest classifier, tune hyperparameters, and analyze feature importance. | October 19, 2026 |
+| جمانة العنزي | Second Classification Model | Select and justify SVM or Logistic Regression, train the classifier, and tune hyperparameters. | October 19, 2026 |
+| ساره الجبرين | Model Evaluation & Comparison | Evaluate both models using accuracy, precision, recall, F1-score, confusion matrices, and 5-fold cross-validation; compare model performance; recommend a model for Phase 2; write the Introduction & Problem Statement and task distribution document. | October 20, 2026 |
+
+### Shared Responsibilities
+
+- Each member writes and executes the code for her assigned section and explains the results.
+- الدانة ال ثنيان and يسرى ال هلال collaborate on the Key Insights & Challenges section.
+- Each member reviews another member's work according to the agreed peer-review rotation.
+- Each member provides a short individual reflection describing what she learned and the challenges she encountered.
+- Both notebooks must be executed from the beginning and reviewed before final submission.
+
+### Individual Reflections
+
+Individual reflections will be added after each team member provides a short account of her learning experience, contributions, and challenges during Phase 1.
+
+### Phase 1 Milestones
+
+| Date | Milestone |
+|---|---|
+| October 15, 2026 | Complete and share the preprocessed dataset. |
+| October 19, 2026 | Complete model training and hyperparameter tuning. |
+| October 20, 2026 | Complete model evaluation, comparison, and README documentation. |
+| October 21, 2026 | Restart and run both notebooks, verify outputs, and review the repository. |
+| October 22, 2026 | Final Phase 1 submission. |
+
 ## AI Tools Disclosure
 
-ChatGPT was used to assist with documentation drafting, language refinement, and reviewing exploratory data analysis findings.
+ChatGPT was used to assist with documentation drafting, language refinement, reviewing exploratory data analysis findings, and providing code suggestions and debugging assistance for the missing-values visualization.
 
-The team reviewed the AI-assisted content and is responsible for verifying the accuracy of the analysis and final project deliverables.
+The team reviewed the AI-assisted content and is responsible for verifying the accuracy of the analysis, code, and final project deliverables.
 
-Any additional AI-assisted work, including code generation or debugging, will be disclosed as appropriate.
+Any additional AI-assisted work will be disclosed as appropriate.
