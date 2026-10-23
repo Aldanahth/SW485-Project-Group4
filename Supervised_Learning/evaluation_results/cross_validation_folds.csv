@@ -1,0 +1,11 @@
+Model,Fold,Accuracy,Macro Precision,Macro Recall,Macro F1
+Random Forest,1,0.7387,0.6982,0.7008,0.6961
+Random Forest,2,0.75,0.6998,0.6965,0.6973
+Random Forest,3,0.7599,0.7127,0.7125,0.7107
+Random Forest,4,0.7472,0.6981,0.7024,0.699
+Random Forest,5,0.744,0.6982,0.6892,0.6924
+Logistic Regression,1,0.7246,0.6886,0.697,0.6867
+Logistic Regression,2,0.7401,0.6926,0.6944,0.6922
+Logistic Regression,3,0.7359,0.7039,0.7085,0.6983
+Logistic Regression,4,0.7147,0.677,0.6816,0.6735
+Logistic Regression,5,0.7129,0.6783,0.6776,0.6724

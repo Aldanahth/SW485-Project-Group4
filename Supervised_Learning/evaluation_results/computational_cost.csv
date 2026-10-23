@@ -1,0 +1,3 @@
+Model,Training time (s),"Prediction time, 885 students (s)",Saved model size (MB)
+Random Forest,1.26,0.056,6.58
+Logistic Regression,0.54,0.003,0.01

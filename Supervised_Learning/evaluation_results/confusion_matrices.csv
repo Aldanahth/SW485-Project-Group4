@@ -1,0 +1,7 @@
+,predicted Dropout,predicted Enrolled,predicted Graduate
+Random Forest | true Dropout,199,56,29
+Random Forest | true Enrolled,37,86,36
+Random Forest | true Graduate,21,64,357
+Logistic Regression | true Dropout,187,71,26
+Logistic Regression | true Enrolled,25,95,39
+Logistic Regression | true Graduate,25,82,335

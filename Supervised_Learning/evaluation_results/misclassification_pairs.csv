@@ -1,0 +1,13 @@
+Model,True class,Predicted as,Students,% of true class
+Logistic Regression,Graduate,Enrolled,82,18.6
+Logistic Regression,Dropout,Enrolled,71,25.0
+Logistic Regression,Enrolled,Graduate,39,24.5
+Logistic Regression,Dropout,Graduate,26,9.2
+Logistic Regression,Enrolled,Dropout,25,15.7
+Logistic Regression,Graduate,Dropout,25,5.7
+Random Forest,Graduate,Enrolled,64,14.5
+Random Forest,Dropout,Enrolled,56,19.7
+Random Forest,Enrolled,Dropout,37,23.3
+Random Forest,Enrolled,Graduate,36,22.6
+Random Forest,Dropout,Graduate,29,10.2
+Random Forest,Graduate,Dropout,21,4.8

@@ -1,0 +1,7 @@
+Model,Class,Precision,Recall,F1,Support
+Random Forest,Dropout,0.7743,0.7007,0.7357,284
+Random Forest,Enrolled,0.4175,0.5409,0.4712,159
+Random Forest,Graduate,0.846,0.8077,0.8264,442
+Logistic Regression,Dropout,0.789,0.6585,0.7179,284
+Logistic Regression,Enrolled,0.3831,0.5975,0.4668,159
+Logistic Regression,Graduate,0.8375,0.7579,0.7957,442
