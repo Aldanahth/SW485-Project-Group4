@@ -19,6 +19,10 @@ Working with GitHub also developed my existing skills. Although I had used it be
 
 Overall, this project improved my Python skills and helped me understand the importance of data inspection, clear documentation, and teamwork. I feel more confident working with datasets and managing my contribution to a group project.
 
+Challenges I Faced
+
+One challenge was making sure that the notebook ran correctly and that all the results were saved after making changes. I also needed to keep the GitHub repository organized and make sure the README matched the project files. These experiences helped me become more careful when reviewing my work and managing updates.
+
 ---
 
 ## يسرى ال هلال
