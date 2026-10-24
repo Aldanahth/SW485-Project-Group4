@@ -165,6 +165,18 @@ SW485-Project-Group4/
 | جمانة العنزي | 445200400 |
 | اريام الركيان | 445200057 |
 
+
+## Phase 1 Milestones
+
+| Date | Milestone |
+| --- | --- |
+| October 15, 2026 | Complete and share the preprocessed dataset. |
+| October 19, 2026 | Complete model training and hyperparameter tuning. |
+| October 20, 2026 | Complete model evaluation, comparison, and README documentation. |
+| October 21, 2026 | Restart and run both notebooks, verify outputs, and review the repository. |
+| October 24, 2026 | Final Phase 1 submission (deadline extended from October 22). |
+
+
 ## Team Work and Documentation
 
 - Task distribution, shared responsibilities, and milestones: [`docs/task_distribution.md`](docs/task_distribution.md)
