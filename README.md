@@ -52,10 +52,10 @@ The dataset contains 4,424 records, with no missing values identified during the
 The target classes are unevenly distributed:
 
 | Target Class | Number of Records | Percentage |
-|---|---:|---:|
-| Graduate | 2,209 | 49.9% |
-| Dropout | 1,421 | 32.1% |
-| Enrolled | 794 | 17.9% |
+| ------------ | ----------------: | ---------: |
+| Graduate     |             2,209 |      49.9% |
+| Dropout      |             1,421 |      32.1% |
+| Enrolled     |               794 |      17.9% |
 
 Because of this class imbalance, model evaluation should consider per-class precision, recall, and F1-score in addition to accuracy.
 
@@ -88,17 +88,25 @@ The resulting preprocessed dataset is saved in `Dataset/preprocessed_data.csv`. 
 
 ## Phase 1: Supervised Learning
 
-The supervised learning work is assigned to `Phase1_Supervised_Learning.ipynb`.
+The supervised learning work is in `Phase1_Supervised_Learning.ipynb`. Two models were trained and tuned on the shared preprocessed dataset (same train/test split, `random_state=42`, 5-fold stratified cross-validation, macro F1 as the tuning metric, `class_weight="balanced"`):
 
-This notebook is intended to cover:
+- **Model 1: Random Forest**, with hyperparameter tuning and a feature-importance analysis.
+- **Model 2: Logistic Regression**, with tuning of the regularization strength `C`.
 
-- Random Forest model training and hyperparameter tuning.
-- Training and tuning a second classification model using SVM or Logistic Regression.
-- Feature importance analysis where applicable.
-- Model evaluation using accuracy, precision, recall, and F1-score.
-- Confusion matrices and 5-fold cross-validation.
-- Comparison of model performance and analysis of misclassifications.
-- Selection of a recommended model for Phase 2.
+Both models were then evaluated with the same evaluation function (accuracy, per-class precision/recall/F1, confusion matrices, 5-fold cross-validation, and a McNemar test on the test-set predictions).
+
+### Results summary
+
+| Model               | Test accuracy | Test macro F1 | 5-fold CV macro F1 |
+| ------------------- | ------------: | ------------: | -----------------: |
+| Random Forest       |         72.5% |         0.678 |              0.699 |
+| Logistic Regression |         69.7% |         0.660 |              0.685 |
+
+- **Recommended model for Phase 2: Random Forest.** It is ahead of Logistic Regression on test accuracy, macro F1, and cross-validation macro F1, and the accuracy gap is statistically significant (McNemar p = 0.026). It also provides class probabilities and feature importances for the dashboard. Logistic Regression is kept as an interpretable baseline.
+- **Main challenge:** the _Enrolled_ class is hard to predict for both models (F1 below 0.5), because students who are still enrolled look similar to both future graduates and future dropouts after one semester.
+- Evaluation tables, confusion-matrix heatmaps, and plots are also saved in `Supervised_Learning/evaluation_results/` and `Supervised_Learning/plots/`.
+
+_Values above are copied from the committed notebook run; if the notebook is re-run, check that they still match._
 
 ## Repository Structure
 
@@ -108,6 +116,13 @@ SW485-Project-Group4/
 │   ├── data.csv
 │   ├── preprocessed_data.csv
 │   └── dataset_info.txt
+├── Supervised_Learning/
+│   ├── models/               # saved tuned models
+│   ├── evaluation_results/   # metrics tables, confusion matrices, predictions
+│   └── plots/                # saved visualizations
+├── docs/
+│   ├── peer_review_evaluation_of_inspection.md
+│   └── individual_reflection.md
 ├── Phase1_Data_Exploration.ipynb
 ├── Phase1_Supervised_Learning.ipynb
 ├── .gitignore
@@ -116,27 +131,16 @@ SW485-Project-Group4/
 
 ## Group Members
 
-| Student Name | Student ID |
-|---|---|
-| الدانة ال ثنيان | 445201311 |
-| نجد الغانم | 445200363 |
-| ساره الجبرين | 445201223 |
-| يسرى ال هلال | 445200254 |
-| جمانة العنزي | 445200400 |
-| اريام الركيان | 445200057 |
+| Student Name    | Student ID |
+| --------------- | ---------- |
+| الدانة ال ثنيان | 445201311  |
+| نجد الغانم      | 445200363  |
+| ساره الجبرين    | 445201223  |
+| يسرى ال هلال    | 445200254  |
+| جمانة العنزي    | 445200400  |
+| اريام الركيان   | 445200057  |
 
-## Team Contributions
 
-The responsibilities for Phase 1 were distributed among the six team members. Each member is responsible for implementing her assigned tasks, documenting the results, and contributing her work to the GitHub repository.
-
-| Student Name | Role | Phase 1 Responsibilities | Deadline |
-|---|---|---|---|
-| الدانة ال ثنيان | Data Inspection & Repository Management | Load and inspect the dataset; examine dimensions, data types, missing values, descriptive statistics, and target class distribution; set up and maintain the GitHub repository and README; collaborate on Key Insights & Challenges. | October 20, 2026 |
-| يسرى ال هلال | Exploratory Data Analysis | Create histograms, box plots, correlation heatmaps, and feature-versus-target visualizations; document the dataset source and justification; collaborate on Key Insights & Challenges. | October 20, 2026 |
-| نجد الغانم | Data Preprocessing | Encode categorical features, scale numerical features, prepare a stratified train/test split, address class imbalance as appropriate, export `preprocessed_data.csv`, and document preprocessing decisions. | October 15, 2026 |
-| اريام الركيان | Random Forest Model | Explain the model selection, train a Random Forest classifier, tune hyperparameters, and analyze feature importance. | October 19, 2026 |
-| جمانة العنزي | Second Classification Model | Select and justify SVM or Logistic Regression, train the classifier, and tune hyperparameters. | October 19, 2026 |
-| ساره الجبرين | Model Evaluation & Comparison | Evaluate both models using accuracy, precision, recall, F1-score, confusion matrices, and 5-fold cross-validation; compare model performance; recommend a model for Phase 2; write the Introduction & Problem Statement and task distribution document. | October 20, 2026 |
 
 ### Shared Responsibilities
 
@@ -146,19 +150,16 @@ The responsibilities for Phase 1 were distributed among the six team members. Ea
 - Each member provides a short individual reflection describing what she learned and the challenges she encountered.
 - Both notebooks must be executed from the beginning and reviewed before final submission.
 
-### Individual Reflections
-
-Individual reflections will be added after each team member provides a short account of her learning experience, contributions, and challenges during Phase 1.
 
 ### Phase 1 Milestones
 
-| Date | Milestone |
-|---|---|
-| October 15, 2026 | Complete and share the preprocessed dataset. |
-| October 19, 2026 | Complete model training and hyperparameter tuning. |
-| October 20, 2026 | Complete model evaluation, comparison, and README documentation. |
+| Date             | Milestone                                                                  |
+| ---------------- | -------------------------------------------------------------------------- |
+| October 15, 2026 | Complete and share the preprocessed dataset.                               |
+| October 19, 2026 | Complete model training and hyperparameter tuning.                         |
+| October 20, 2026 | Complete model evaluation, comparison, and README documentation.           |
 | October 21, 2026 | Restart and run both notebooks, verify outputs, and review the repository. |
-| October 22, 2026 | Final Phase 1 submission. |
+| October 22, 2026 | Final Phase 1 submission.                                                  |
 
 ## AI Tools Disclosure
 
@@ -167,3 +168,5 @@ ChatGPT was used to assist with documentation drafting, language refinement, rev
 The team reviewed the AI-assisted content and is responsible for verifying the accuracy of the analysis, code, and final project deliverables.
 
 Any additional AI-assisted work will be disclosed as appropriate.
+
+Claude (Anthropic) was used to assist with selected parts of the project, including writing, code structuring, and interpretation of evaluation results. All outputs were reviewed and edited by ساره الجبرين, who is responsible for their accuracy.
