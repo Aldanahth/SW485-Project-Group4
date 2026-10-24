@@ -159,7 +159,7 @@ SW485-Project-Group4/
 | October 19, 2026 | Complete model training and hyperparameter tuning.                         |
 | October 20, 2026 | Complete model evaluation, comparison, and README documentation.           |
 | October 21, 2026 | Restart and run both notebooks, verify outputs, and review the repository. |
-| October 22, 2026 | Final Phase 1 submission.                                                  |
+| October 24, 2026 | Final Phase 1 submission.                                                  |
 
 ## AI Tools Disclosure
 
