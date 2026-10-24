@@ -1,3 +1,4 @@
+
 # University Student Retention & Advisory Dashboard
 
 **Course:** SWE485  
@@ -99,16 +100,16 @@ Both models were then evaluated with the same evaluation function (accuracy, per
 
 | Model               | Test accuracy | Test macro F1 | 5-fold CV macro F1 |
 | ------------------- | ------------: | ------------: | -----------------: |
-| Random Forest       |         72.5% |         0.678 |              0.699 |
-| Logistic Regression |         69.7% |         0.660 |              0.685 |
+| Random Forest       |         74.1% |         0.673 |              0.694 |
+| Logistic Regression |         71.1% |         0.672 |              0.684 |
 
-- **Recommended model for Phase 2: Random Forest.** It is ahead of Logistic Regression on test accuracy, macro F1, and cross-validation macro F1, and the accuracy gap is statistically significant (McNemar p = 0.026). It also provides class probabilities and feature importances for the dashboard. Logistic Regression is kept as an interpretable baseline.
-- **Main challenge:** the _Enrolled_ class is hard to predict for both models (F1 below 0.5), because students who are still enrolled look similar to both future graduates and future dropouts after one semester.
+- **Recommended model for Phase 2: Random Forest.** It achieved higher test accuracy and a marginally higher test macro F1 than Logistic Regression, as well as a higher cross-validation macro F1. The test accuracy difference is statistically significant (McNemar p = 0.026). Random Forest also provides class probabilities and feature importances for the dashboard. Logistic Regression is retained as an interpretable baseline.
+- **Main challenge:** the *Enrolled* class is difficult to predict for both models. Random Forest achieved an Enrolled F1-score of approximately 0.43, while Logistic Regression achieved approximately 0.47. Students who are still enrolled can have academic patterns similar to both future graduates and future dropouts after one semester.
 - Evaluation tables, confusion-matrix heatmaps, and plots are also saved in `Supervised_Learning/evaluation_results/` and `Supervised_Learning/plots/`.
 
-_Values above are copied from the committed notebook run; if the notebook is re-run, check that they still match._
+*The results above match the saved evaluation outputs and Section 3.8 of the committed notebook. If the notebook is re-run, the results and written explanations should be checked again.*
 
-Results were produced with the library versions listed in `requirements.txt` (install with `pip install -r requirements.txt`). Other scikit-learn versions can select different tuned hyperparameters and give slightly different numbers.
+The repository includes `requirements.txt` for documenting the project's Python dependencies. However, the versions currently listed in this file do not fully match the versions printed in the saved Notebook 2 run. The file should be regenerated from the same environment used for the final accepted results before submission. Different library versions, especially scikit-learn, may produce different tuned hyperparameters and evaluation results.
 
 ## Repository Structure
 
