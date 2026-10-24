@@ -89,27 +89,47 @@ The resulting preprocessed dataset is saved in `Dataset/preprocessed_data.csv`. 
 
 ## Phase 1: Supervised Learning
 
-The supervised learning work is in `Phase1_Supervised_Learning.ipynb`. Two models were trained and tuned on the shared preprocessed dataset (same train/test split, `random_state=42`, 5-fold stratified cross-validation, macro F1 as the tuning metric, `class_weight="balanced"`):
+The supervised learning work is documented in `Phase1_Supervised_Learning.ipynb`.
 
-- **Model 1: Random Forest**, with hyperparameter tuning and a feature-importance analysis.
+Two models were trained and tuned on the shared preprocessed dataset using the same train/test split, `random_state=42`, 5-fold stratified cross-validation, macro F1 as the tuning metric, and `class_weight="balanced"`:
+
+- **Model 1: Random Forest**, with hyperparameter tuning and feature-importance analysis.
 - **Model 2: Logistic Regression**, with tuning of the regularization strength `C`.
 
-Both models were then evaluated with the same evaluation function (accuracy, per-class precision/recall/F1, confusion matrices, 5-fold cross-validation, and a McNemar test on the test-set predictions).
+Both models were evaluated using the same evaluation approach, including accuracy, per-class precision, recall, F1-score, confusion matrices, 5-fold cross-validation, and McNemar's test on the test-set predictions.
 
-### Results summary
+### Results Summary
 
-| Model               | Test accuracy | Test macro F1 | 5-fold CV macro F1 |
-| ------------------- | ------------: | ------------: | -----------------: |
-| Random Forest       |         74.1% |         0.673 |              0.694 |
-| Logistic Regression |         71.1% |         0.672 |              0.684 |
+| Model | Test Accuracy | Test Macro F1 | 5-Fold CV Macro F1 |
+| ----- | ------------: | ------------: | -----------------: |
+| Random Forest | 74.1% | 0.673 | 0.694 |
+| Logistic Regression | 71.1% | 0.672 | 0.684 |
 
-- **Recommended model for Phase 2: Random Forest.** It achieved higher test accuracy and a marginally higher test macro F1 than Logistic Regression, as well as a higher cross-validation macro F1. The test accuracy difference is statistically significant (McNemar p = 0.026). Random Forest also provides class probabilities and feature importances for the dashboard. Logistic Regression is retained as an interpretable baseline.
-- **Main challenge:** the *Enrolled* class is difficult to predict for both models. Random Forest achieved an Enrolled F1-score of approximately 0.43, while Logistic Regression achieved approximately 0.47. Students who are still enrolled can have academic patterns similar to both future graduates and future dropouts after one semester.
-- Evaluation tables, confusion-matrix heatmaps, and plots are also saved in `Supervised_Learning/evaluation_results/` and `Supervised_Learning/plots/`.
+- **Recommended model for Phase 2: Random Forest.** It achieved higher test accuracy and a marginally higher test macro F1 than Logistic Regression, as well as a higher cross-validation macro F1. The test accuracy difference was statistically significant according to McNemar's test (`p = 0.026`). Random Forest also provides class probabilities and feature importances for the dashboard. Logistic Regression is retained as an interpretable baseline.
+- **Main challenge:** The **Enrolled** class is difficult to predict for both models. Random Forest achieved an Enrolled F1-score of approximately 0.43, while Logistic Regression achieved approximately 0.47. Random Forest had higher Enrolled precision (0.46 versus 0.39), while Logistic Regression had higher Enrolled recall (0.59 versus 0.42). Students who are still enrolled can have academic patterns similar to both future graduates and future dropouts after one semester.
+- **Evaluation artifacts:** Evaluation tables, confusion-matrix heatmaps, and plots are saved in `Supervised_Learning/evaluation_results/` and `Supervised_Learning/plots/`.
 
-*The results above match the saved evaluation outputs and Section 3.8 of the committed notebook. If the notebook is re-run, the results and written explanations should be checked again.*
+*The results above match the final reported evaluation outputs and Section 3.8 of Notebook 2. If the notebook is re-run, the results and written explanations should be checked again.*
 
-The repository includes `requirements.txt` for documenting the project's Python dependencies. However, the versions currently listed in this file do not fully match the versions printed in the saved Notebook 2 run. The file should be regenerated from the same environment used for the final accepted results before submission. Different library versions, especially scikit-learn, may produce different tuned hyperparameters and evaluation results.
+### Reproducibility and Dependencies
+
+The repository includes `requirements.txt`, documenting the Python library versions used in the final Google Colab run of Notebook 2. These versions were recorded from the same session that produced the reported evaluation results.
+
+The main dependencies are:
+
+- `pandas==2.2.3`
+- `numpy==2.1.3`
+- `scikit-learn==1.6.1`
+- `scipy==1.16.3`
+- `matplotlib==3.10.0`
+- `seaborn==0.13.2`
+- `joblib==1.6.0`
+
+To install the documented dependencies, run:
+
+`pip install -r requirements.txt`
+
+Different library versions, especially scikit-learn, may lead to different tuned hyperparameters and evaluation results.
 
 ## Repository Structure
 
@@ -136,14 +156,14 @@ SW485-Project-Group4/
 
 ## Group Members
 
-| Student Name    | Student ID |
-| --------------- | ---------- |
-| الدانة ال ثنيان | 445201311  |
-| نجد الغانم      | 445200363  |
-| ساره الجبرين    | 445201223  |
-| يسرى ال هلال    | 445200254  |
-| جمانة العنزي    | 445200400  |
-| اريام الركيان   | 445200057  |
+| Student Name | Student ID |
+| ------------ | ---------- |
+| الدانة ال ثنيان | 445201311 |
+| نجد الغانم | 445200363 |
+| ساره الجبرين | 445201223 |
+| يسرى ال هلال | 445200254 |
+| جمانة العنزي | 445200400 |
+| اريام الركيان | 445200057 |
 
 ## Team Work and Documentation
 
