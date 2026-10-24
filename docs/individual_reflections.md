@@ -122,16 +122,34 @@ One challenge was choosing a regularization setting because different values of 
 
 ---
 
+
+
 ## ساره الجبرين
 
 _Model Evaluation & Comparison_
 
 ### What I Learned
 
-My part was to evaluate and compare the Random Forest and Logistic Regression models. The main lesson was that accuracy alone is misleading when one class is small: _Enrolled_ is only about 18% of the students, so I used macro F1 as the main metric and looked at precision, recall, and F1 for each class. The confusion matrices showed which classes get mixed up, mostly Graduate and Dropout students predicted as Enrolled. I also learned the difference between cross-validation on the training data and the final test set, and how to use a McNemar test to check whether an accuracy gap between two models could be just chance.
+My part was to evaluate and compare the Random Forest and Logistic Regression models. The main lesson was that accuracy alone is misleading when one class is small: *Enrolled* is only about 18% of the students, so I used macro F1 as the main metric and looked at precision, recall, and F1 for each class. The confusion matrices, the ROC curves, and the Precision-Recall curves showed that Dropout and Graduate are separated well, while Enrolled is the class the models mix up most.
 
-The _Enrolled_ class was hard for both models, so I had to explain why it is weak and not only report the number. The Logistic Regression tuning also gave a different `C` on different machines because two values were almost tied, so I wrote the analysis so that it does not depend on one exact number. Combining my section with my teammates' work in one notebook without changing their code was another challenge. Next time, I would agree on library versions and on the shared evaluation function earlier, so the results are the same on every machine.
+I also learned the difference between cross-validation on the training data and the final test set, and why both are needed: cross-validation shows how stable a model is across different parts of the training data, and the test set gives the final estimate on students the model has never seen. In addition, I learned how to use a McNemar test to check whether an accuracy gap between two models could be just chance. In our results, the accuracy gap was statistically significant, while the macro F1 scores were almost identical, so I learned to describe the advantage of Random Forest carefully and not overstate it.
+
+Finally, I learned that the best model is not decided by one number. The recommendation also depends on what the final system needs, such as class probabilities and feature importances for the dashboard, and on the trade-off between accuracy and interpretability.
+
+### Challenges I Faced
+
+1. **The Enrolled class:** Both models performed worst on *Enrolled*, so I had to explain why it is hard to predict after the first semester, and not only report the low F1 score.
+
+2. **Results that change between environments:** The tuned settings changed between machines and library versions, because two values of `C` for Logistic Regression were almost tied. I wrote the analysis so that it does not depend on one exact number, and the team recorded the library versions in `requirements.txt`.
+
+3. **Combining the work of several teammates:** I had to fit my evaluation section into the same notebook as my teammates' models without changing their code, and make sure both models used the same split, `random_state`, and cross-validation.
+
+4. **Explaining the results honestly:** The two models were very close, so I had to choose wording that reflects a small difference and not a large one.
+
+Next time, I would agree on library versions and on the shared evaluation function earlier, so the results are the same on every machine.
 
 ### Use of AI Tools
 
 Claude (Anthropic) was used as a supporting tool to help verify parts of my work. I reviewed the content and checked the results myself, and I am responsible for their accuracy.
+
+---
