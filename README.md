@@ -121,10 +121,12 @@ SW485-Project-Group4/
 │   ├── evaluation_results/   # metrics tables, confusion matrices, predictions
 │   └── plots/                # saved visualizations
 ├── docs/
-│   ├── peer_review_evaluation_of_inspection.md
-│   └── individual_reflection.md
+│   ├── task_distribution.md      # roles, responsibilities, deadlines, milestones
+│   ├── individual_reflections.md # each member's reflection
+│   └── peer_review.md            # peer reviews between team members
 ├── Phase1_Data_Exploration.ipynb
 ├── Phase1_Supervised_Learning.ipynb
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
@@ -142,24 +144,13 @@ SW485-Project-Group4/
 
 
 
-### Shared Responsibilities
+## Team Work and Documentation
 
-- Each member writes and executes the code for her assigned section and explains the results.
-- الدانة ال ثنيان and يسرى ال هلال collaborate on the Key Insights & Challenges section.
-- Each member reviews another member's work according to the agreed peer-review rotation.
-- Each member provides a short individual reflection describing what she learned and the challenges she encountered.
-- Both notebooks must be executed from the beginning and reviewed before final submission.
+- Task distribution, shared responsibilities, and milestones: [`docs/task_distribution.md`](docs/task_distribution.md)
+- Individual reflections: [`docs/individual_reflections.md`](docs/individual_reflections.md)
+- Peer reviews: [`docs/peer_review.md`](docs/peer_review.md)
 
 
-### Phase 1 Milestones
-
-| Date             | Milestone                                                                  |
-| ---------------- | -------------------------------------------------------------------------- |
-| October 15, 2026 | Complete and share the preprocessed dataset.                               |
-| October 19, 2026 | Complete model training and hyperparameter tuning.                         |
-| October 20, 2026 | Complete model evaluation, comparison, and README documentation.           |
-| October 21, 2026 | Restart and run both notebooks, verify outputs, and review the repository. |
-| October 24, 2026 | Final Phase 1 submission.                                                  |
 
 ## AI Tools Disclosure
 

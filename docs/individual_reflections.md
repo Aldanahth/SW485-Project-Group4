@@ -74,6 +74,8 @@ I also learned how important version control and clean collaboration are. Managi
 
 Finally, I learned how valuable teamwork and code alignment can be. Discussing our approach with teammates helped us catch small pipeline details early and made our final modeling phase more robust.
 
+---
+
 ## جمانة العنزي
 
 _Second Classification Model_
