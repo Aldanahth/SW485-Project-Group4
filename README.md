@@ -171,14 +171,17 @@ SW485-Project-Group4/
 - Individual reflections: [`docs/individual_reflections.md`](docs/individual_reflections.md)
 - Peer reviews: [`docs/peer_review.md`](docs/peer_review.md)
 
+
+
 ## AI Tools Disclosure
 
-ChatGPT was used to assist with documentation drafting, language refinement, reviewing exploratory data analysis findings, and providing code suggestions and debugging assistance for the missing-values visualization.
+AI tools were used as supporting resources during the project. All AI-assisted content was reviewed and verified by the relevant team members, who remain responsible for the accuracy of their work and the final project deliverables.
 
-The team reviewed the AI-assisted content and is responsible for verifying the accuracy of the analysis, code, and final project deliverables.
+**ChatGPT (OpenAI) — Aldanah Al Thunayan:** Used to assist with documentation drafting, language refinement, reviewing exploratory data analysis findings, and providing code suggestions and debugging assistance for the missing-values visualization. Aldanah independently reviewed the AI-assisted content, checked its consistency with the project's notebooks and evaluation results, and verified the accuracy of the documentation before submission.
 
-Any additional AI-assisted work will be disclosed as appropriate.
+**Claude (Anthropic) — Sarah Aljabrain:** Used to assist with selected parts of the project, including writing, code structuring, and interpretation of evaluation results. Sarah reviewed and edited the AI-assisted outputs and remains responsible for their accuracy.
 
-Claude (Anthropic) was used to assist with selected parts of the project, including writing, code structuring, and interpretation of evaluation results. All outputs were reviewed and edited by ساره الجبرين, who is responsible for their accuracy.
+**Claude (Anthropic) — Yusra Alhilal:** Used as a supporting reference for code clarification and refining the phrasing and formatting of documentation. Yusra retains full responsibility for the technical implementation, analysis, and accuracy.
 
-Claude (Anthropic) was used purely as a supporting reference for code clarification and for refining the phrasing and formatting of the documentation. Yusra holds full ownership of the technical implementation, analysis, and accuracy.
+AI tools supported the team's work but did not replace independent analysis, review, or verification by the team members.
+
