@@ -5,7 +5,8 @@ Each team member reflects below on what she learned and the challenges she faced
 ---
 
 ## الدانة ال ثنيان
-*Data Inspection & Repository Management*
+
+_Data Inspection & Repository Management_
 
 ### What I Learned
 
@@ -26,7 +27,8 @@ One challenge was making sure that the notebook ran correctly and that all the r
 ---
 
 ## يسرى ال هلال
-*Exploratory Data Analysis*
+
+_Exploratory Data Analysis_
 
 ### What I Learned
 
@@ -43,7 +45,8 @@ Finally, I learned how helpful teamwork can be. My teammates found mistakes that
 ---
 
 ## نجد الغانم
-*Data Preprocessing*
+
+_Data Preprocessing_
 
 ### What I Learned
 
@@ -56,22 +59,24 @@ Finally, I learned that a number does not always mean a quantity. Codes such as 
 ---
 
 ## اريام الركيان
-*Random Forest Model*
 
-> **Preliminary draft: Aryam should review, edit, and confirm that it reflects her own experience before submission.**
+_Random Forest Model_
 
 ### What I Learned
 
-I learned that Random Forest suits our problem well: the dataset mixes numerical and categorical features, the task has three classes (Dropout, Enrolled, Graduate), and the model handles non-linear relationships without needing extensive feature scaling. It combines many decision trees, which makes it more robust against overfitting than a single tree.
+Before this project, I thought that training a machine learning model was simply a matter of running a few lines of code with default settings. I learned that proper hyperparameter tuning with GridSearchCV, and choosing the right evaluation metric, such as macro F1 instead of basic accuracy, is essential for measuring the performance of all classes fairly, especially when predicting multi-class student outcomes like Dropout, Enrolled, and Graduate.
 
-I also learned how much hyperparameter tuning matters. I used GridSearchCV with 5-fold stratified cross-validation to compare 27 combinations of settings and selected the best one using macro F1. The best settings were 100 trees, a maximum depth of 20, and a minimum of 10 samples to split a node. This showed me that model performance depends on its settings and that they should be chosen with cross-validation, not guessed.
+I also learned to look much more closely at the structure of the preprocessed dataset. A teammate pointed out that the split column should only be used to separate the training and testing sets and not be treated as a feature. This reminded me how important it is to coordinate with the team and understand every column in the data pipeline to avoid errors.
 
-Analyzing feature importance taught me that the scores show which features the model relies on most, but they do not prove that those features cause dropout. I also learned about the limits of the model: it is harder to interpret than simpler models, tuning many combinations takes more computation, and it can still overfit if its depth is not controlled.
+Working on the feature importance plot helped me understand how to interpret what the model is actually learning, and not only how to generate charts. I learned to analyze which demographic and academic factors drive the Random Forest predictions.
 
----
+I also learned how important version control and clean collaboration are. Managing Jupyter notebooks and updating code on GitHub taught me to keep the repository structured and consistent for everyone.
+
+Finally, I learned how valuable teamwork and code alignment can be. Discussing our approach with teammates helped us catch small pipeline details early and made our final modeling phase more robust.
 
 ## جمانة العنزي
-*Second Classification Model*
+
+_Second Classification Model_
 
 ### What I Learned
 
@@ -90,13 +95,14 @@ Finally, I learned that teamwork is essential in machine learning projects. Each
 ---
 
 ## ساره الجبرين
-*Model Evaluation & Comparison*
+
+_Model Evaluation & Comparison_
 
 ### What I Learned
 
-My part was to evaluate and compare the Random Forest and Logistic Regression models. The main lesson was that accuracy alone is misleading when one class is small: *Enrolled* is only about 18% of the students, so I used macro F1 as the main metric and looked at precision, recall, and F1 for each class. The confusion matrices showed which classes get mixed up, mostly Graduate and Dropout students predicted as Enrolled. I also learned the difference between cross-validation on the training data and the final test set, and how to use a McNemar test to check whether an accuracy gap between two models could be just chance.
+My part was to evaluate and compare the Random Forest and Logistic Regression models. The main lesson was that accuracy alone is misleading when one class is small: _Enrolled_ is only about 18% of the students, so I used macro F1 as the main metric and looked at precision, recall, and F1 for each class. The confusion matrices showed which classes get mixed up, mostly Graduate and Dropout students predicted as Enrolled. I also learned the difference between cross-validation on the training data and the final test set, and how to use a McNemar test to check whether an accuracy gap between two models could be just chance.
 
-The *Enrolled* class was hard for both models, so I had to explain why it is weak and not only report the number. The Logistic Regression tuning also gave a different `C` on different machines because two values were almost tied, so I wrote the analysis so that it does not depend on one exact number. Combining my section with my teammates' work in one notebook without changing their code was another challenge. Next time, I would agree on library versions and on the shared evaluation function earlier, so the results are the same on every machine.
+The _Enrolled_ class was hard for both models, so I had to explain why it is weak and not only report the number. The Logistic Regression tuning also gave a different `C` on different machines because two values were almost tied, so I wrote the analysis so that it does not depend on one exact number. Combining my section with my teammates' work in one notebook without changing their code was another challenge. Next time, I would agree on library versions and on the shared evaluation function earlier, so the results are the same on every machine.
 
 ### Use of AI Tools
 
