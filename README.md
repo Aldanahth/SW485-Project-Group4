@@ -108,6 +108,8 @@ Both models were then evaluated with the same evaluation function (accuracy, per
 
 _Values above are copied from the committed notebook run; if the notebook is re-run, check that they still match._
 
+Results were produced with the library versions listed in `requirements.txt` (install with `pip install -r requirements.txt`). Other scikit-learn versions can select different tuned hyperparameters and give slightly different numbers.
+
 ## Repository Structure
 
 ```text
@@ -142,15 +144,11 @@ SW485-Project-Group4/
 | جمانة العنزي    | 445200400  |
 | اريام الركيان   | 445200057  |
 
-
-
 ## Team Work and Documentation
 
 - Task distribution, shared responsibilities, and milestones: [`docs/task_distribution.md`](docs/task_distribution.md)
 - Individual reflections: [`docs/individual_reflections.md`](docs/individual_reflections.md)
 - Peer reviews: [`docs/peer_review.md`](docs/peer_review.md)
-
-
 
 ## AI Tools Disclosure
 
