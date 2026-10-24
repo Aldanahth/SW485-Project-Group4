@@ -159,3 +159,5 @@ The team reviewed the AI-assisted content and is responsible for verifying the a
 Any additional AI-assisted work will be disclosed as appropriate.
 
 Claude (Anthropic) was used to assist with selected parts of the project, including writing, code structuring, and interpretation of evaluation results. All outputs were reviewed and edited by ساره الجبرين, who is responsible for their accuracy.
+
+Claude (Anthropic) was used purely as a supporting reference for code clarification and for refining the phrasing and formatting of the documentation. Yusra holds full ownership of the technical implementation, analysis, and accuracy.

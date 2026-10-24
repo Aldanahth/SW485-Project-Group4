@@ -20,7 +20,7 @@ Working with GitHub also developed my existing skills. Although I had used it be
 
 Overall, this project improved my Python skills and helped me understand the importance of data inspection, clear documentation, and teamwork. I feel more confident working with datasets and managing my contribution to a group project.
 
-Challenges I Faced
+### Challenges I Faced
 
 One challenge was making sure that the notebook ran correctly and that all the results were saved after making changes. I also needed to keep the GitHub repository organized and make sure the README matched the project files. These experiences helped me become more careful when reviewing my work and managing updates.
 
@@ -42,6 +42,20 @@ The prediction-timing issue made me think about how the system would work in rea
 
 Finally, I learned how helpful teamwork can be. My teammates found mistakes that I had not noticed, and fixing them made our work much better.
 
+### Challenges I Faced
+
+1. **Identifying the real type of each feature:** At first, all columns looked numeric, but many of them, such as `Course` and `Application mode`, are codes for categories. I had to separate the features into continuous, binary, and categorical groups and choose a suitable chart for each group.
+
+2. **Measuring the relationship with a multi-class target:** In my first version, I encoded the target as 0, 1, and 2 and included it in the correlation heatmap. During the review, a teammate pointed out that Pearson correlation assumes equal distances between values, which is not true for outcome categories. I removed the target from the heatmap and used mutual information, box plots, and proportion charts instead.
+
+3. **Loading the data correctly:** The file uses semicolons instead of commas, and the column name `Daytime/evening attendance` contains a trailing tab character, so I had to set the separator explicitly and clean the column names.
+
+4. **Writing observations that match the data:** Some of my first observations were based on patterns I expected to see. After running the code on the real data, I found that some of them were not accurate, such as the difference for displaced students and the interpretation of zero grades. I corrected them and added the actual numbers.
+
+5. **Avoiding cause-and-effect claims:** Some of my early wording suggested that features cause dropout. I rewrote the observations to describe associations only.
+
+6. **Prediction timing:** The features most associated with the outcome (semester grades) are not available when a student first enrolls, which conflicts with the goal of early identification. I raised this with the team, and we decided to predict after the 1st semester.
+
 ---
 
 ## نجد الغانم
@@ -55,6 +69,10 @@ I learned how to decide which data a model should use, and that every choice is 
 I also learned how to adapt when the data does not match the plan. The suggested dashboard includes GPA and attendance sliders, but when I checked the column names, I found that the dataset has no attendance column. I proposed to my teammates that we use what the data already has, and we agreed on an academic progress measure: approved units divided by enrolled units. While preparing it, an AI tool inspected the data and found a special case: 180 students enrolled in zero units, which makes the division impossible, and it helped us flag them. It also gave me a brief on the order of the steps, which showed me that cleaning data is a series of decisions. As a beginner, I ran every step myself and checked each output.
 
 Finally, I learned that a number does not always mean a quantity. Codes such as Course are labels, not measurements, so they need different handling from real numbers.
+
+### Challenges I Faced
+
+One challenge was deciding which features were available at the first-semester prediction point, since second-semester information could not be used. I also had to handle students with zero enrolled units when calculating academic progress. Making sure that encoding, scaling, and other preprocessing steps used training data only helped me understand how to prevent data leakage.
 
 ---
 
@@ -73,6 +91,10 @@ Working on the feature importance plot helped me understand how to interpret wha
 I also learned how important version control and clean collaboration are. Managing Jupyter notebooks and updating code on GitHub taught me to keep the repository structured and consistent for everyone.
 
 Finally, I learned how valuable teamwork and code alignment can be. Discussing our approach with teammates helped us catch small pipeline details early and made our final modeling phase more robust.
+
+### Challenges I Faced
+
+Choosing hyperparameters was challenging because testing more combinations increased the training time, while several settings gave very similar scores. Predicting the Enrolled class was also difficult even after tuning. These results taught me to look beyond overall accuracy and interpret model performance carefully.
 
 ---
 
@@ -93,6 +115,10 @@ I learned why accuracy alone is not enough to evaluate a model. Our classes have
 One of the most important lessons was that a higher score does not automatically mean a model is the best choice. Since our goal is to help universities identify students at risk of dropping out, we need to pay particular attention to how well each model identifies the Dropout class, while also considering the other classes.
 
 Finally, I learned that teamwork is essential in machine learning projects. Each member is responsible for a different part, but the parts must fit together, and discussing the findings as a team leads to a more reliable decision-support system. Machine learning is not only about writing code; it is also about making thoughtful decisions and understanding what the results mean.
+
+### Challenges I Faced
+
+One challenge was choosing a regularization setting because different values of C produced almost the same cross-validation scores. I also had to use the same preprocessed data and train/test split as Random Forest to keep the comparison fair. Balancing precision and recall for the Enrolled class helped me understand the trade-offs between evaluation metrics.
 
 ---
 
