@@ -1,5 +1,5 @@
 ,Students,% of test set
-Both correct,571,64.5
-Only Random Forest correct,71,8.0
-Only Logistic Regression correct,46,5.2
-Both wrong,197,22.3
+Both correct,574,64.9
+Only Random Forest correct,82,9.3
+Only Logistic Regression correct,55,6.2
+Both wrong,174,19.7
