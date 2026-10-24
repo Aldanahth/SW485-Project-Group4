@@ -1,0 +1,3 @@
+Model,C,Mean CV Macro F1,CV Std,Test Accuracy,Test Macro F1
+Baseline (C = 1.0),1.0,0.6844,0.0098,0.6972,0.6601
+Tuned (C = 0.1),0.1,0.6845,0.0128,0.7107,0.6721

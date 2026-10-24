@@ -1,0 +1,7 @@
+Model,Class,ROC-AUC,Average Precision,Class Share (random AP)
+Random Forest,Dropout,0.8991,0.8438,0.3209
+Random Forest,Enrolled,0.7892,0.457,0.1797
+Random Forest,Graduate,0.9153,0.8929,0.4994
+Logistic Regression,Dropout,0.9038,0.8563,0.3209
+Logistic Regression,Enrolled,0.7795,0.408,0.1797
+Logistic Regression,Graduate,0.9067,0.885,0.4994
