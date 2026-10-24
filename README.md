@@ -177,7 +177,7 @@ SW485-Project-Group4/
 
 AI tools were used as supporting resources during the project. All AI-assisted content was reviewed and verified by the relevant team members, who remain responsible for the accuracy of their work and the final project deliverables.
 
-**ChatGPT (OpenAI) — Aldanah Al Thunayan:** Used to assist with documentation drafting, language refinement, reviewing exploratory data analysis findings, and providing code suggestions and debugging assistance for the missing-values visualization. Aldanah independently reviewed the AI-assisted content, checked its consistency with the project's notebooks and evaluation results, and verified the accuracy of the documentation before submission.
+**ChatGPT (OpenAI) — Aldanah Al Thenyan:** Used to assist with documentation drafting, language refinement, reviewing exploratory data analysis findings, and providing code suggestions and debugging assistance for the missing-values visualization. Aldanah independently reviewed the AI-assisted content, checked its consistency with the project's notebooks and evaluation results, and verified the accuracy of the documentation before submission.
 
 **Claude (Anthropic) — Sarah Aljabrain:** Used to assist with selected parts of the project, including writing, code structuring, and interpretation of evaluation results. Sarah reviewed and edited the AI-assisted outputs and remains responsible for their accuracy.
 
