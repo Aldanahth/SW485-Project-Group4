@@ -182,6 +182,7 @@ SW485-Project-Group4/
 - Task distribution, shared responsibilities, and milestones: [`docs/task_distribution.md`](docs/task_distribution.md)
 - Individual reflections: [`docs/individual_reflections.md`](docs/individual_reflections.md)
 - Peer reviews: [`docs/peer_review.md`](docs/peer_review.md)
+- Meeting notes and team coordination: [`docs/meeting_notes.md`](docs/meeting_notes.md)
 
 
 
