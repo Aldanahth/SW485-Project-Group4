@@ -94,9 +94,9 @@ The supervised learning work is documented in `Phase1_Supervised_Learning.ipynb`
 Two models were trained and tuned on the shared preprocessed dataset using the same train/test split, `random_state=42`, 5-fold stratified cross-validation, macro F1 as the tuning metric, and `class_weight="balanced"`:
 
 - **Model 1: Random Forest**, with hyperparameter tuning and feature-importance analysis.
-- **Model 2: Logistic Regression**, with tuning of the regularization strength `C`.
+- **Model 2: Logistic Regression**, with tuning of the regularization strength `C` and a comparison between the baseline (default `C = 1.0`) and tuned models.
 
-Both models were evaluated using the same evaluation approach, including accuracy, per-class precision, recall, F1-score, confusion matrices, 5-fold cross-validation, and McNemar's test on the test-set predictions.
+Both models were evaluated using the same evaluation approach, including accuracy, per-class precision, recall, F1-score, confusion matrices, 5-fold cross-validation, ROC and Precision-Recall curves (one-vs-rest), and McNemar's test on the test-set predictions.
 
 ### Results Summary
 
@@ -146,7 +146,8 @@ SW485-Project-Group4/
 ├── docs/
 │   ├── task_distribution.md      # roles, responsibilities, deadlines, milestones
 │   ├── individual_reflections.md # each member's reflection
-│   └── peer_review.md            # peer reviews between team members
+│   ├── peer_review.md            # peer reviews between team members
+│   └── meeting_notes.md          # team meetings, decisions, and action items
 ├── Phase1_Data_Exploration.ipynb
 ├── Phase1_Supervised_Learning.ipynb
 ├── requirements.txt
@@ -170,11 +171,10 @@ SW485-Project-Group4/
 
 | Date | Milestone |
 | --- | --- |
-| October 15, 2026 | Complete and share the preprocessed dataset. |
-| October 19, 2026 | Complete model training and hyperparameter tuning. |
-| October 20, 2026 | Complete model evaluation, comparison, and README documentation. |
-| October 21, 2026 | Restart and run both notebooks, verify outputs, and review the repository. |
-| October 24, 2026 | Final Phase 1 submission (deadline extended from October 22). |
+| October 17, 2026 | Complete and share the preprocessed dataset. |
+| October 21, 2026 | Complete model training and hyperparameter tuning. |
+| October 23, 2026 | Complete model evaluation, comparison, and README documentation. |
+| October 24, 2026 | Restart and run both notebooks, verify outputs, review the repository, and submit Phase 1 (deadline extended from October 22). |
 
 
 ## Team Work and Documentation
@@ -200,9 +200,11 @@ ChatGPT was used to assist with documentation drafting, language refinement, rev
 
 Claude (Anthropic) was used to assist with selected parts of the project, including writing, code structuring, and interpretation of evaluation results. All outputs were reviewed and edited by ساره الجبرين, who is responsible for their accuracy.
 
+
 **Claude (Anthropic) — يسرى ال هلال:**
 
 Claude (Anthropic) was used purely as a supporting reference for code clarification and for refining the phrasing and formatting of the documentation. Yusra holds full ownership of the technical implementation, analysis, and accuracy.
 
 AI tools provided suggestions and clarification only. The team members remained responsible for completing, reviewing, and verifying their own work.
+
 

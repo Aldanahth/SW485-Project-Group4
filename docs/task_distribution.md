@@ -26,8 +26,7 @@ The responsibilities for Phase 1 were distributed among the six team members. Ea
 
 | Date             | Milestone                                                                  |
 | ---------------- | -------------------------------------------------------------------------- |
-| October 15, 2026 | Complete and share the preprocessed dataset.                               |
-| October 19, 2026 | Complete model training and hyperparameter tuning.                         |
-| October 20, 2026 | Complete model evaluation, comparison, and README documentation.           |
-| October 21, 2026 | Restart and run both notebooks, verify outputs, and review the repository. |
-| October 24, 2026 | Final Phase 1 submission (deadline extended from October 22).              |
+| October 17, 2026 | Complete and share the preprocessed dataset.                               |
+| October 21, 2026 | Complete model training and hyperparameter tuning.                         |
+| October 23, 2026 | Complete model evaluation, comparison, and README documentation.           |
+| October 24, 2026 | Restart and run both notebooks, verify outputs, review the repository, and submit Phase 1 (deadline extended from October 22). |
