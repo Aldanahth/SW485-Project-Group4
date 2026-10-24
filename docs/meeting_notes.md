@@ -14,9 +14,11 @@
 - Reviewed the dataset structure, class distribution, and exploratory analysis.
 - Discussed data preprocessing and feature preparation.
 - Reviewed the decision to use first-semester information for early prediction.
-- Discussed excluding second-semester features to prevent data leakage.
+- Discussed excluding second-semester features because they are not available at the chosen prediction point.
 
 ### Decisions and Action Items
+- **Team decision:** Predict student outcomes after the 1st semester, using enrollment-time and 1st semester features (30 of the original 36 features) and excluding the six 2nd semester features.
+- **Team decision:** Use `academic_progress` (approved units divided by enrolled units) as an academic progress measure, because the dataset has no attendance column.
 - **Najd:** Finalize and share the preprocessed dataset.
 - **Yusra:** Complete exploratory data analysis and visualizations.
 - **Aldanah:** Review dataset information and organize the GitHub repository documentation.
