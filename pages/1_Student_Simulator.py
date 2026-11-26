@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
 
 from Supervised_Learning.rf_pipeline_utils import (  # noqa: E402
     CATEGORY_COLS, CLASS_NAMES, TARGET_CODES, load_raw_data, load_rf_pipeline,
+    get_key_drivers as compute_key_drivers,
 )
 
 PIPELINE_PATH = ROOT / "Supervised_Learning" / "models" / "rf_pipeline.joblib"
@@ -67,17 +68,7 @@ def get_test_students():
 @st.cache_data
 def get_key_drivers(top_n=10):
     """Global Random Forest importance, with one-hot columns added back to their original feature."""
-    pipeline = get_pipeline()
-    names = pipeline.named_steps["preprocess"].get_feature_names_out()
-    importance = pd.Series(pipeline.named_steps["model"].feature_importances_, index=names)
-
-    def original_feature(column):
-        for cat in CATEGORY_COLS:
-            if column.startswith(cat + "_"):
-                return cat
-        return column
-
-    grouped = importance.groupby(original_feature).sum().sort_values(ascending=False).head(top_n)
+    grouped = compute_key_drivers(get_pipeline(), top_n)
     return pd.DataFrame({
         "Feature": [READABLE_NAMES.get(f, f) for f in grouped.index],
         "Importance": grouped.values,
