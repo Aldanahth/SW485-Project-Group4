@@ -1,0 +1,3 @@
+Algorithm,Silhouette ↑,Davies-Bouldin ↓,WCSS ↓,BCubed Precision ↑,BCubed Recall ↑,BCubed F1 ↑,Cluster sizes
+K-Means,0.192,2.009,70788.632,0.461,0.678,0.548,"[3409, 724, 291]"
+Agglomerative (Ward),0.195,2.084,71568.212,0.459,0.666,0.543,"[3374, 730, 320]"
