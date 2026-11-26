@@ -7,3 +7,5 @@ scipy==1.16.3
 seaborn==0.13.2
 streamlit
 altair
+google-genai
+python-dotenv
