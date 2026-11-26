@@ -113,6 +113,19 @@ class StudentPreprocessor(BaseEstimator, TransformerMixin):
     def get_feature_names_out(self, input_features=None):
         return np.array(self.feature_names_out_, dtype=object)
 
+def get_key_drivers(pipeline, top_n=10):
+    """Top features the Random Forest relies on, with one-hot columns added back
+    to their original feature (e.g. all Course_* columns -> Course)."""
+    names = pipeline.named_steps["preprocess"].get_feature_names_out()
+    importance = pd.Series(pipeline.named_steps["model"].feature_importances_, index=names)
+
+    def original_feature(column):
+        for cat in CATEGORY_COLS:
+            if column.startswith(cat + "_"):
+                return cat
+        return column
+
+    return importance.groupby(original_feature).sum().sort_values(ascending=False).head(top_n)
 
 def load_rf_pipeline(path="Supervised_Learning/models/rf_pipeline.joblib"):
     """Load the saved pipeline (preprocessing + tuned Random Forest)."""
