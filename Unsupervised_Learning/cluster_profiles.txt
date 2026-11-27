@@ -1,0 +1,20 @@
+K-MEANS CLUSTER PROFILES (K = 3)
+==================================
+
+Cluster 1: Regular on-track students (3409 students, 77% of the cohort)
+  Younger, mostly day-time students with a normal first-semester load who passed most of their units.
+  Outcomes: 57% Graduate, 23% Dropout, 20% still enrolled
+  Typical student: age 22.2, 6.1 units enrolled and 5.1 approved in the 1st semester, 1st-semester grade 12.7
+  Suggested support: Standard monitoring. The cluster alone cannot show who is at risk, so use the model prediction.
+
+Cluster 2: No-progress students (724 students, 16% of the cohort)
+  Students who enrolled in first-semester units but passed almost none of them, with a first-semester grade of about zero.
+  Outcomes: 11% Graduate, 80% Dropout, 10% still enrolled
+  Typical student: age 25.8, 4.2 units enrolled and 0.0 approved in the 1st semester, 1st-semester grade 0.1
+  Suggested support: Highest priority for early outreach: an academic recovery plan and a check of tuition status with student services.
+
+Cluster 0: Mature transfer / credited students (291 students, 7% of the cohort)
+  Older students with many units credited from previous studies, a heavy first-semester load and more evening classes.
+  Outcomes: 62% Graduate, 25% Dropout, 13% still enrolled
+  Typical student: age 29.3, 13.1 units enrolled and 11.5 approved in the 1st semester, 1st-semester grade 12.6
+  Suggested support: Offer flexible scheduling and check workload and work or family constraints; academic remediation is usually not the main need.
